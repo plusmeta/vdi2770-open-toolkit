@@ -126,7 +126,8 @@
         "attrs": {},
         "label": {
             "de": "VDI-2770-Hauptdokument",
-            "en": "VDI 2770 main document"
+            "en": "VDI 2770 main document",
+            "zh": "VDI 2770主文档"
         },
         "indicators": []
     },
@@ -151,7 +152,8 @@
         "attrs": {},
         "label": {
             "de": "VDI-2770-Dokumentationscontainer",
-            "en": "VDI 2770 documentation container"
+            "en": "VDI 2770 documentation container",
+            "zh": "VDI 2770文档容器"
         },
         "indicators": [
             "application/zip"
@@ -198,7 +200,8 @@
         "attrs": {},
         "label": {
             "de": "bezieht sich auf VDI-2770-Paket",
-            "en": "relates to VDI 2770 package"
+            "en": "relates to VDI 2770 package",
+            "zh": "与VDI 2770文件包有关"
         },
         "indicators": []
     },
@@ -210,7 +213,8 @@
         "attrs": {},
         "label": {
             "de": "VDI-2770-Container",
-            "en": "VDI 2770 container"
+            "en": "VDI 2770 container",
+            "zh": "VDI 2770容器"
         },
         "indicators": []
     },
@@ -241,7 +245,8 @@
         "attrs": {},
         "label": {
             "de": "Projektnummer",
-            "en": "Project ID"
+            "en": "Project ID",
+            "zh": "Project ID"
         },
         "indicators": []
     },
@@ -291,7 +296,8 @@
         "attrs": {},
         "label": {
             "de": "Equipmentnummer",
-            "en": "Equipment ID"
+            "en": "Equipment ID",
+            "zh": "Equipment ID"
         },
         "indicators": []
     },
@@ -303,7 +309,8 @@
         "attrs": {},
         "label": {
             "de": "Referenzkennzeichen",
-            "en": "Reference designation"
+            "en": "Reference designation",
+            "zh": "Reference designation"
         },
         "indicators": []
     },
@@ -401,7 +408,8 @@
         "attrs": {},
         "label": {
             "de": "Dokumentklassifikation",
-            "en": "Document classification"
+            "en": "Document classification",
+            "zh": "文档分类"
         },
         "indicators": []
     },

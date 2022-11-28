@@ -17,6 +17,7 @@
         :deletable-chips="multiple"
         :search-input.sync="search"
         return-object
+        :class="{ 'required': required }"
         :readonly="isReadonly"
         @input="selectProperty"
       >

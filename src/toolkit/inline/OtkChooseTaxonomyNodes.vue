@@ -14,6 +14,7 @@
           small-chips
           deletable-chips
           multiple
+          :class="{ 'required': required }"
           @update:search-input="searchInput$.next($event)"
           @click:clear="treeInput$.next(getEmpty)"
           @input="onComboboxInput($event)"

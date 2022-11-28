@@ -226,6 +226,7 @@ const getters = {
                     icon
                 };
             })
+            .filter(prop => prop?.value?.length > 0)
             .sort((a, b) => a?.text?.localeCompare(b?.text))
             .sort((a, b) => a.position - b.position);
     }

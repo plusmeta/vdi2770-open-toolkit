@@ -17,6 +17,7 @@
         deletable-chips
         :search-input.sync="search"
         return-object
+        :class="{ 'required': required }"
         :readonly="isReadonly"
         :disabled="isReadonly"
         @input="changeList"
