@@ -75,7 +75,7 @@ export default {
         allTitles() {
             let uniqueTitles = new Set([
                 this.getString("pdf:Title"),
-                this.getString("iirds:title"),
+                this.getString("vdi:has-title"),
                 this.getString("html:title"),
                 this.getString("plus:SimplePDFTitle"),
                 this.getString("plus:SimpleHTMLTitle"),
@@ -91,9 +91,9 @@ export default {
         getTitleBase() {
             return [
                 this.getString("plus:relates-to-manufacturer"),
-                this.getString("iirds:has-document-type"),
-                this.getString("iirds:relates-to-product-variant"),
-                this.getString("iirds:language")
+                this.getString("vdi:has-document-type"),
+                this.getString("vdi:relates-to-product-variant"),
+                this.getString("vdi:has-language")
             ];
         },
         getTitleParts() {

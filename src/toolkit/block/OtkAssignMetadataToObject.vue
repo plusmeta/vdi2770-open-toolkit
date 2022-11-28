@@ -63,8 +63,8 @@
                       v-if="custom.value === 'plus:Title'"
                       :key="custom.value"
                       :object-uuid="object.uuid"
-                      propclass="plus:Title"
-                      proprelation="iirds:title"
+                      propclass="vdi:Title"
+                      proprelation="vdi:has-title"
                       :label="true"
                     />
                     <ChooseTaxonomyNodes

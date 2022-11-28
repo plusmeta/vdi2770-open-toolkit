@@ -1,15 +1,15 @@
 [
     {
-        "identifier": "plus:Language",
+        "identifier": "vdi:Language",
         "datatype": "plus:Class",
-        "subClassOf": "plus:Meta",
+        "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata",
                 "plus:TitlePart"
             ],
             "plus:has-relations": [
-                "iirds:language"
+                "vdi:has-language"
             ],
             "plus:is-part-of-metadata-group": [
                 "plus:BasicMetadataGroup"
@@ -21,7 +21,12 @@
         "attrs": {
             "plus:metaListPriority": 12,
             "plus:titlePartPriority": 5,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Sprachabhängige Liste von Schlagwörtern",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "Sprache",
@@ -54,7 +59,12 @@
             "plus:metaListPriority": 21,
             "plus:publicName": "VDI2770:2018",
             "plus:singleAssignment": true,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Sprachabhängige Liste von Schlagwörtern",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "VDI-2770-Dokumentkategorie",
@@ -66,7 +76,7 @@
     {
         "identifier": "vdi:DCC61355",
         "datatype": "plus:Class",
-        "subClassOf": "plus:Meta",
+        "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:TaxonomyTree",
@@ -85,15 +95,20 @@
         },
         "attrs": {
             "plus:metaListPriority": 22,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "DCC61355",
+                "en": "DCC61355",
+                "zh": "DCC61355"
+            }
         },
         "label": "IEC 61355",
         "indicators": []
     },
     {
-        "identifier": "iirds:revision",
+        "identifier": "vdi:revision",
         "datatype": "plus:String",
-        "subClassOf": "iirds:iirdsAttribute",
+        "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata"
@@ -107,7 +122,12 @@
         },
         "attrs": {
             "plus:metaListPriority": 41,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Identifikationsnummer zur Dokumentenversion.",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "Revision",
@@ -132,7 +152,12 @@
             ]
         },
         "attrs": {
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Sprachabhängige Liste von Schlagwörtern",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "Schlagwörter",
@@ -142,9 +167,63 @@
         "indicators": []
     },
     {
-        "identifier": "plus:Organization",
+        "identifier": "vdi:AuthorName",
         "datatype": "plus:String",
-        "subClassOf": "plus:Meta",
+        "subClassOf": "vdi:root",
+        "rels": {
+            "plus:is-part-of-metadata-group": [
+                "plus:BasicMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:account"
+            ]
+        },
+        "attrs": {
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Kontaktname",
+                "en": "Contact name",
+                "zh": "联系人姓名"
+            }
+        },
+        "label": {
+            "de": "Kontaktname",
+            "en": "Contact name",
+            "zh": "联系人姓名"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:AuthorEmail",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
+        "rels": {
+            "plus:is-part-of-metadata-group": [
+                "plus:BasicMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:email"
+            ]
+        },
+        "attrs": {
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Kontaktmailadresse",
+                "en": "Contact email address",
+                "zh": "联系电子邮件"
+            }
+        },
+        "label": {
+            "de": "Kontaktmailadresse",
+            "en": "Contact email address",
+            "zh": "联系电子邮件"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:OrganizationName",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:EquipmentMetadata",
@@ -158,44 +237,49 @@
             ]
         },
         "attrs": {
-            "plus:readonly": true
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Die gebräuchliche Bezeichnung für die Organisation. Beispiel: <b>Manufacturer ABC</b>",
+                "en": "Example: <b>Manufacturer ABC</b>",
+                "zh": "Example: <b>Manufacturer ABC</b>"
+            }
         },
         "label": {
-            "de": "Organisation",
-            "en": "Organization",
+            "de": "Organisation (Kurzname)",
+            "en": "Organization (short name)",
             "zh": "组织"
         },
         "indicators": []
     },
     {
-        "identifier": "plus:Manufacturer",
-        "datatype": "plus:Class",
-        "subClassOf": "plus:Meta",
+        "identifier": "vdi:OrganizationId",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
         "rels": {
-            "plus:has-roles": [],
-            "plus:has-relations": [
-                "plus:relates-to-manufacturer"
-            ],
             "plus:is-part-of-metadata-group": [
-                "plus:ProductMetadataGroup"
+                "plus:BasicMetadataGroup"
             ],
             "plus:has-icons": [
                 "mdi:factory"
             ]
         },
         "attrs": {
-            "plus:metaListPriority": 32,
-            "plus:titlePartPriority": 1,
-            "plus:requiredAssignment": true
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Eine eindeutige ID für die Organisation.<br> Beispiel (Website): <b>www.manufacturer-abc.org</b>",
+                "en": "Example: <b>www.manufacturer-abc.org</b>",
+                "zh": "Example: <b>www.manufacturer-abc.org</b>"
+            }
         },
         "label": {
-            "de": "Hersteller",
-            "en": "Manufacturer"
+            "de": "Organisation-ID",
+            "en": "Organization-ID",
+            "zh": ""
         },
         "indicators": []
     },
     {
-        "identifier": "plus:SerialNumber",
+        "identifier": "vdi:SerialNumber",
         "datatype": "plus:String",
         "subClassOf": "plus:Meta",
         "rels": {
@@ -205,9 +289,6 @@
             ],
             "plus:is-part-of-metadata-group": [
                 "plus:ProductMetadataGroup"
-            ],
-            "iirds:has-identity-type": [
-                "iirds:SerialNumber"
             ],
             "plus:has-icons": [
                 "mdi:counter"
@@ -226,13 +307,10 @@
         "indicators": []
     },
     {
-        "identifier": "plus:IEC61406",
+        "identifier": "vdi:IEC61406",
         "datatype": "plus:String",
-        "subClassOf": "plus:Meta",
+        "subClassOf": "vdi:root",
         "rels": {
-            "vdi:is-object-identifier": [
-                "plus:AutoID"
-            ],
             "plus:has-roles": [
                 "plus:EquipmentMetadata",
                 "plus:IdentityDomain"
@@ -248,21 +326,26 @@
             "plus:metaListPriority": 34,
             "plus:requiredAssignment": true,
             "plus:characterLimit": 150,
-            "plus:readonly": true
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "IEC61406",
+                "en": "IEC61406",
+                "zh": ""
+            }
         },
         "label": "AutoID (IEC 61406)",
         "indicators": []
     },
     {
-        "identifier": "plus:Title",
+        "identifier": "vdi:Title",
         "datatype": "plus:String",
-        "subClassOf": "plus:Meta",
+        "subClassOf": "vdi:root",
         "rels": {
             "plus:has-roles": [
                 "plus:AssignableMetadata"
             ],
             "plus:has-relations": [
-                "iirds:title"
+                "vdi:has-title"
             ],
             "plus:is-part-of-metadata-group": [
                 "plus:BasicMetadataGroup"
@@ -273,7 +356,12 @@
         },
         "attrs": {
             "plus:metaListPriority": 11,
-            "plus:requiredAssignment": true
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Sprachabhängiger Titel des Dokuments.",
+                "en": "",
+                "zh": ""
+            }
         },
         "label": {
             "de": "Titel",
@@ -283,19 +371,19 @@
         "indicators": []
     },
     {
-        "identifier": "iirds:title",
+        "identifier": "vdi:has-title",
         "datatype": "plus:String",
-        "subClassOf": "iirds:iirdsAttribute",
+        "subClassOf": "vdi:root",
         "rels": {},
         "label": {
-            "de": "Titel (iiRDS)",
-            "en": "Title (iIRDS)",
-            "zh": "标题（iIRDS）"
+            "de": "Titel",
+            "en": "Title",
+            "zh": "标题"
         },
         "indicators": []
     },
     {
-        "identifier": "plus:Comment",
+        "identifier": "vdi:Comment",
         "datatype": "plus:LongText",
         "subClassOf": "plus:Meta",
         "rels": {
@@ -314,16 +402,16 @@
             "plus:requiredAssignment": true
         },
         "label": {
-            "de": "Beschreibung",
-            "en": "Description",
-            "zh": "评论"
+            "de": "Dokumentbeschreibung",
+            "en": "Document description",
+            "zh": ""
         },
         "indicators": []
     },
     {
-        "identifier": "iirds:ProductVariant",
+        "identifier": "vdi:ProductVariant",
         "datatype": "plus:String",
-        "subClassOf": "iirds:ProductMetadata",
+        "subClassOf": "vdi:root",
         "rels": {
 
             "plus:has-roles": [
@@ -346,21 +434,148 @@
             "plus:readonly": true
         },
         "label": {
-            "de": "Produktbezeichnung",
-            "en": "Product label",
+            "de": "Produktbezeichnung / Modell",
+            "en": "Product label / Model",
             "zh": "产品变体"
         },
         "indicators": []
     },
     {
-        "identifier": "iirds:relates-to-product-variant",
-        "datatype": "plus:Relation",
-        "subClassOf": "iirds:relates-to-product-metadata",
-        "rels": {},
+        "identifier": "vdi:EquipmentId",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
+        "rels": {
+
+            "plus:has-roles": [
+                "plus:TitlePart",
+                "plus:IdentityDomain",
+                "plus:EquipmentMetadata"
+            ],
+
+            "plus:is-part-of-metadata-group": [
+                "plus:ProductMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:robot-industrial"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 30,
+            "plus:titlePartPriority": 2,
+            "plus:requiredAssignment": true,
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Identifikationsnummer für ein Produkt.",
+                "en": "",
+                "zh": ""
+            }
+        },
         "label": {
-            "de": "bezieht sich auf Produktvariante",
-            "en": "relates to product variant",
-            "zh": "与产品变体有关"
+            "de": "Produkt-ID",
+            "en": "Product id"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:InternalProjectId",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
+        "rels": {
+
+            "plus:has-roles": [
+                "plus:TitlePart",
+                "plus:IdentityDomain",
+                "plus:EquipmentMetadata"
+            ],
+
+            "plus:is-part-of-metadata-group": [
+                "plus:ProjectMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:robot-industrial"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 30,
+            "plus:titlePartPriority": 2,
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Identifikationsnummer für ein Produkt.",
+                "en": "",
+                "zh": ""
+            }
+        },
+        "label": {
+            "de": "Project-Id (Intern)",
+            "en": "Project id (internal)"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:CustomerProjectId",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
+        "rels": {
+
+            "plus:has-roles": [
+                "plus:TitlePart",
+                "plus:IdentityDomain",
+                "plus:EquipmentMetadata"
+            ],
+
+            "plus:is-part-of-metadata-group": [
+                "plus:ProjectMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:robot-industrial"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 30,
+            "plus:titlePartPriority": 2,
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "Identifikationsnummer für ein Produkt.",
+                "en": "",
+                "zh": ""
+            }
+        },
+        "label": {
+            "de": "Project-Id (Kunde)",
+            "en": "Project id (customer)"
+        },
+        "indicators": []
+    },
+    {
+        "identifier": "vdi:ReferenceLabel",
+        "datatype": "plus:String",
+        "subClassOf": "vdi:root",
+        "rels": {
+
+            "plus:has-roles": [
+                "plus:IdentityDomain"
+            ],
+
+            "plus:is-part-of-metadata-group": [
+                "plus:ProjectMetadataGroup"
+            ],
+            "plus:has-icons": [
+                "mdi:robot-industrial"
+            ]
+        },
+        "attrs": {
+            "plus:metaListPriority": 30,
+            "plus:titlePartPriority": 2,
+            "plus:requiredAssignment": true,
+            "plus:tooltipInfo": {
+                "de": "",
+                "en": "",
+                "zh": ""
+            }
+        },
+        "label": {
+            "de": "Referenzkennzeichnung (Kunde)",
+            "en": "reference label (customer)"
         },
         "indicators": []
     },
@@ -442,7 +657,7 @@
         "indicators": []
     },
     {
-        "identifier": "plus:OrganizationOfficial",
+        "identifier": "vdi:OrganizationOfficialName",
         "datatype": "plus:String",
         "subClassOf": "plus:Meta",
         "rels": {
@@ -461,12 +676,16 @@
             "plus:metaListPriority": 13,
             "plus:titlePartPriority": 1,
             "plus:requiredAssignment": true,
-            "plus:readonly": true
+            "plus:readonly": true,
+            "plus:tooltipInfo": {
+                "de": "Der offizielle Namen der Organisation. Beispiel: <b>Manufacturer ABC Ltd. & Co KG</b>",
+                "en": "Example: <b>Manufacturer ABC Ltd. & Co KG</b>"
+            }
         },
         "label": {
-            "de": "Organisation (offiziell)",
-            "en": "Organization (official)",
-            "zh": "组织（官方)"
+            "de": "Organisation (Offizieller Name)",
+            "en": "Organization (official name)",
+            "zh": ""
         },
         "indicators": []
     }
