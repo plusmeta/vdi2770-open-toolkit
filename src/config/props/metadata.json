@@ -147,7 +147,6 @@
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
-                "plus:AssignableMetadata",
                 "plus:EquipmentMetadata",
                 "plus:TitlePart"
             ],
@@ -159,9 +158,6 @@
             ]
         },
         "attrs": {
-            "plus:metaListPriority": 13,
-            "plus:titlePartPriority": 1,
-            "plus:requiredAssignment": true,
             "plus:readonly": true
         },
         "label": {
@@ -204,7 +200,6 @@
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
-                "plus:AssignableMetadata",
                 "plus:EquipmentMetadata",
                 "plus:IdentityDomain"
             ],
@@ -239,7 +234,6 @@
                 "plus:AutoID"
             ],
             "plus:has-roles": [
-                "plus:AssignableMetadata",
                 "plus:EquipmentMetadata",
                 "plus:IdentityDomain"
             ],
@@ -333,7 +327,6 @@
         "rels": {
 
             "plus:has-roles": [
-                "plus:AssignableMetadata",
                 "plus:TitlePart",
                 "plus:IdentityDomain",
                 "plus:EquipmentMetadata"
@@ -454,7 +447,6 @@
         "subClassOf": "plus:Meta",
         "rels": {
             "plus:has-roles": [
-                "plus:AssignableMetadata",
                 "plus:EquipmentMetadata",
                 "plus:TitlePart"
             ],

@@ -110,26 +110,39 @@
                   />
                 </v-col>
               </v-row>
-              <v-row>
-                <v-col>
-                  <v-text-field
-                    v-model="plusOrga"
-                    prepend-icon="mdi-domain"
-                    :rules="[isNotEmpty]"
-                    class="required"
-                    :label="getPropertyLabelById('plus:Organization')"
-                  />
-                </v-col>
-                <v-col>
-                  <v-text-field
-                    v-model="plusOrgaOfficial"
-                    prepend-icon="mdi-domain"
-                    :rules="[isNotEmpty]"
-                    class="required"
-                    :label="getPropertyLabelById('plus:OrganizationOfficial')"
-                  />
-                </v-col>
-              </v-row>
+              <v-form-group
+                :label="getPropertyLabelById('plus:Organization')"
+              >
+                <v-row>
+                  <v-col>
+                    <v-text-field
+                      v-model="plusOrga"
+                      prepend-icon="mdi-domain"
+                      :rules="[isNotEmpty]"
+                      class="required"
+                      :label="getPropertyLabelById('plus:Organization')"
+                    />
+                  </v-col>
+                  <v-col>
+                    <v-text-field
+                      v-model="plusOrgaOfficial"
+                      prepend-icon="mdi-domain"
+                      :rules="[isNotEmpty]"
+                      class="required"
+                      :label="getPropertyLabelById('plus:OrganizationOfficial')"
+                    />
+                  </v-col>
+                  <v-col cols="12" class="mt-0 pt-0">
+                    <v-text-field
+                      v-model="plusOrgaId"
+                      prepend-icon="mdi-domain"
+                      :rules="[isNotEmpty]"
+                      class="required"
+                      :label="$t('Otk.orgaContactWebsite')"
+                    />
+                  </v-col>
+                </v-row>
+              </v-form-group>
               <v-switch
                 :label="$t('Otk.acceptUsageAgreement')"
                 :input-value="getSetting('user_eula')"
@@ -180,15 +193,18 @@
                 </v-col>
                 <v-col>
                   <v-text-field
-                    :value="plusOrga"
-                    prepend-icon="mdi-factory"
+                    v-model="plusProductId"
+                    prepend-icon="mdi-robot-industrial"
                     class="required"
-                    disabled
-                    :label="getPropertyLabelById('plus:Organization')"
+                    :rules="[isNotEmpty]"
+                    :label="getPropertyLabelById('iirds:ProductId')"
                   />
                 </v-col>
               </v-row>
-              <v-form-group>
+              <v-form-group
+                required
+                :label="$t('Otk.productReference')"
+              >
                 <v-row>
                   <v-col>
                     <v-text-field
@@ -227,7 +243,7 @@ export default {
     components: { VFormGroup },
     data() {
         return {
-            valid: false
+            valid: false,
         };
     },
     computed: {
@@ -248,6 +264,15 @@ export default {
                 value = value ? [value] : [];
                 return this.updateCurrentProjectRelations({"plus:SerialNumber": value});
             }
+        },
+        plusOrgaId: {
+            get() {
+                return this.$store.getters["settings/getSetting"]("base_orga_id");
+            },
+            set($event) {
+                this.setLocalSetting({key: "base_orga_id", value: $event});
+                this.updateCurrentProjectRelations({"plus:OrganizationId": [$event]});
+            },
         },
         plusOrga: {
             get() {
