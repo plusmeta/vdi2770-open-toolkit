@@ -102,6 +102,6 @@ export default {
             en: "VDI 2770 container was generated successfully",
             zh: "成功生成 VDI 2770 容器"
         },
-        component: () => import(/* webpackChunkName: "StepGenerateIIRDS.step" */ "@/toolkit/step/OtkStepGenerateVDI2770")
+        component: () => import(/* webpackChunkName: "OtkStepGenerateVDI2770.step" */ "@/toolkit/step/OtkStepGenerateVDI2770")
     }]
 };
