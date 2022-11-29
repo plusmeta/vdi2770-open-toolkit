@@ -43,17 +43,11 @@ const getters = {
     indexByIdentifier: (state, getters) => {
         return getters._dict.ixById;
     },
-    indizesByType: (state, getters) => {
-        return getters._dict.ixsByType;
-    },
     indizesByClass: (state, getters) => {
         return getters._dict.ixsByClass;
     },
     indizesByRole: (state, getters) => {
         return getters._dict.ixsByRole;
-    },
-    getDict: (state, getters) => {
-        return getters._dict;
     },
     isProperty: (state, getters) => (identifier) => {
         return !!state.properties[getters.indexByIdentifier[identifier]];
@@ -165,6 +159,9 @@ const getters = {
         } else {
             return [];
         }
+    },
+    isRequired: (state, getters) => (uri) => {
+        return getters.getPropertyAttributeById(uri, "plus:requiredAssignment") === true;
     },
     resolveAssignedRelationType: (state, getters) => (uri) => {
         let resolved = getters.getPropertyRelationById(uri, "plus:has-relations");

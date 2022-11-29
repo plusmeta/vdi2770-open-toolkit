@@ -74,9 +74,6 @@ const getters = {
     isDarkTheme: (state) => {
         return !!state.settings?.theme?.dark;
     },
-    getTheme: (state) => {
-        return state.settings?.theme || {};
-    },
     getSetting: state => (key) => {
         return state.settings[key] ?? undefined;
     },
@@ -93,10 +90,10 @@ const getters = {
         const mode = (getters.isDarkTheme) ? "dark" : "light";
         return state.settings.theme?.logo[mode] || "dark";
     },
-    getLogoForTheme: (state, getters, rootGetters) => (theme) => {
+    getLogoForTheme: state => (theme) => {
         return state.settings.theme?.logo[theme] || "dark";
     },
-    isOrgaIsNotValidCount: (state, getters, rootState, rootGetters) => {
+    isOrgaIsNotValidCount: (state, getters) => {
         return [
             getters.getSetting("user_eula"),
             getters.getSetting("base_user_name"),
@@ -109,7 +106,7 @@ const getters = {
         return [
             (rootGetters["projects/getCurrentProjectRelationById"]("vdi:SerialNumber")?.[0] || rootGetters["projects/getCurrentProjectRelationById"]("vdi:IEC61406")?.[0]),
             rootGetters["projects/getCurrentProjectRelationById"]("vdi:ProductVariant")?.[0],
-            getters.getSetting("base_orga_fullname")
+            rootGetters["projects/getCurrentProjectRelationById"]("vdi:EquipmentId")?.[0]
         ].map(Boolean).filter(v => v === false).length;
     },
 };

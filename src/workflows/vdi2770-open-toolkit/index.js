@@ -73,6 +73,14 @@ export default {
         props: {
             objecttype: ["plus:Document"]
         },
+        rules: [
+            store => store.getters["storage/countInvalidObjects"] === 0
+        ],
+        ruleExpl: {
+            de: "Sie müssen alle mit '*' markierten Felder ausfüllen.",
+            en: "You have to fill out all fields marked with '*'.",
+            zh: ""
+        },
         component: () => import(/* webpackChunkName: "StepBulkAssignMetadata.step" */"@/toolkit/step/OtkStepBulkAssignMetadata")
     },
     {
