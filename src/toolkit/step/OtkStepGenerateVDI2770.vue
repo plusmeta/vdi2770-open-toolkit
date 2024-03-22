@@ -162,6 +162,7 @@ export default {
         generatePackage() {
             this.processedObjectsCount = 0;
             this.percent = 0;
+            this.identities = [];
             this.generateVDI();
         },
         addToStorage(blob, name) {
