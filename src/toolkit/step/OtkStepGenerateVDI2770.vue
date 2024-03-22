@@ -162,6 +162,7 @@ export default {
         generatePackage() {
             this.processedObjectsCount = 0;
             this.percent = 0;
+            this.identities = [];
             this.generateVDI();
         },
         addToStorage(blob, name) {
@@ -217,17 +218,23 @@ export default {
             this.totalContainers = 0;
             this.totalObjects = this.countObjects();
 
+            const identityUris = [
+                "iirds:ObjectInstanceURI",
+                "iirds:SerialNumber",
+                "iirds:ProductVariant",
+                "plus:CustomerProjectId",
+                "plus:InternalProjectId",
+                "plus:ReferenceDesignation",
+                "iirds:OrderCode"
+            ];
+            for (const identityUri of identityUris) {
+                const values = this.getCurrentProjectRelationById(identityUri);
+                if (values?.length > 0) {
+                    this.identities.push({ uri: identityUri, value: values});
+                }
+            }
+
             const productLabel = this.getCurrentProjectRelationById("iirds:ProductVariant");
-            const autoIdValues = this.getCurrentProjectRelationById("iirds:ObjectInstanceURI");
-            const snValues = this.getCurrentProjectRelationById("iirds:SerialNumber");
-
-            if (autoIdValues?.length > 0) {
-                this.identities.push({ uri: "iirds:ObjectInstanceURI", value: autoIdValues});
-            }
-            if (snValues?.length > 0) {
-                this.identities.push({ uri: "iirds:SerialNumber", value: snValues });
-            }
-
             const [containerName, main] = await this.generateDocumentationContainer([productLabel[0], this.identities]);
 
             let containerID = await this.addToStorage(main, containerName);
@@ -241,7 +248,7 @@ export default {
             let zip = new JSzip();
             let objectName = productLabel;
 
-            let containerName = identities.map(i => i?.value?.toString()).filter(Boolean).join(" ");
+            let containerName = identities.slice(0, 2).map(i => i?.value?.toString()).filter(Boolean).join(" ");
             containerName = this.sanitizeFilename(containerName);
 
             // Main pdf
@@ -556,8 +563,7 @@ export default {
                     const relationshipType = "RefersTo";
                     vers.ele("DocumentRelationship", { "Type": relationshipType })
                         .ele("DocumentId", { "DomainId": objectsDomain }).txt(processObject.id).up()
-                        .ele("DocumentVersionId").txt(refRevision).up()
-                        .ele("Description", { "Language": this.getCurrentLocale }).txt(refDescription);
+                        .ele("DocumentVersionId").txt(refRevision);
                 }
             }
 
