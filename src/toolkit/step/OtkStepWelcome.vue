@@ -54,16 +54,12 @@
           </v-row>
           <v-row justify="center" align="center">
             <v-col cols="auto">
-              <a href="https://plusmeta.de/" target="_blank"><v-img src="/images/plusmeta_logo.svg" width="300px" /></a>
+              <a href="https://quanos.com/produkte/plusmeta-platform/vdi-2770-use-case/" target="_blank"><v-img src="/images/Quanos_Logo_Blue.png" width="300px" /></a>
             </v-col>
           </v-row>
           <v-row justify="center" align="center">
             <v-col cols="auto" class="caption">
-              <a href="https://plusmeta.de/" target="_blank">www.plusmeta.de</a>
-              &bull;
-              <a href="mailto:hallo@plusmeta.de">hallo@plusmeta.de</a>
-              &bull;
-              <a href="tel:+4972195977777">+49 721 95977777</a>
+              <a href="https://quanos.com/produkte/plusmeta-platform/vdi-2770-use-case/" target="_blank">Quanos Solutions GmbH</a>
             </v-col>
           </v-row>
           <v-row align="center" justify="center">

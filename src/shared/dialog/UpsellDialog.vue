@@ -27,26 +27,6 @@
             {{ $t("Otk.upsellTitle") }}
           </h4>
           <p v-html="$t('Otk.upsellText')" />
-          <p>
-            <v-row>
-              <v-col cols="6">
-                <v-text-field
-                  v-model="userName"
-                  prepend-icon="mdi-account"
-                  dense
-                  hide-details
-                />
-              </v-col>
-              <v-col cols="6">
-                <v-text-field
-                  v-model="userMail"
-                  prepend-icon="mdi-email"
-                  dense
-                  hide-details
-                />
-              </v-col>
-            </v-row>
-          </p>
         </v-card-text>
         <v-card-actions class="px-4">
           <v-btn
@@ -74,8 +54,6 @@
 
 <script>
 import { mapGetters } from "vuex";
-import * as Sentry from "@sentry/browser";
-import ObjectHash from "object-hash";
 
 export default {
     name: "UpsellDialog",
@@ -115,33 +93,7 @@ export default {
             }
         },
         sendRequest() {
-            const reason = this.reason || "Upgrade";
-            const baseSettings = Object.entries(this.getSettings).filter(entry => entry[0].startsWith("base")).reduce((obj, [key, value]) => {
-                obj[key] = value;
-                return obj;
-            }, {});
-
-            const currentBaseSettingsHash = ObjectHash(JSON.stringify(baseSettings));
-
-            Sentry.setUser({
-                id: currentBaseSettingsHash,
-                username: this.userName,
-                email: this.userMail
-            });
-
-            Sentry.setTag("org.name", this.getSetting("base_orga_name"));
-            Sentry.setTag("org.full", this.getSetting("base_orga_fullname"));
-            Sentry.setTag("org.id", this.getSetting("base_orga_id"));
-
-            Sentry.setTag("reason", reason);
-            Sentry.setTag("locale", this.getCurrentLocale);
-
-            Sentry.setExtra("settings", this.getSettings);
-
-            Sentry.captureMessage(`DemoRequest: ${reason}` , "info");
-
-            this.$notify.send(this.$t("App.demoRequestSent"), "success");
-            this.showDialog = false;
+            window.open("https://information.quanos.com/de/plusmeta-platform-1-zu-1-gespr%C3%A4ch", "_blank");
         }
     }
 };
