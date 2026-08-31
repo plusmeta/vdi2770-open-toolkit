@@ -171,7 +171,7 @@ export default {
     data() {
         return {
             showLicenseDialog: false,
-            feebdackAddress: "support@plusmeta.de",
+            feebdackAddress: "support.aihub@quanos.com",
             feedbackSubject: "[VDI2770-OT] Feedback",
             version: `v${process.env.VUE_APP_VERSION}`
         };

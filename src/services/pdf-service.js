@@ -149,7 +149,7 @@ export class PdfService {
             });
 
             PDF.info["Title"] = header;
-            PDF.info["Author"] = "plusmeta GmbH";
+            PDF.info["Author"] = "Quanos Solutions GmbH";
             PDF.info["Producer"] = `plusmeta VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION})`;
             PDF.info["Creator"] = `plusmeta VDI 2770 Open Toolkit (v${process.env.VUE_APP_VERSION})`;
 
