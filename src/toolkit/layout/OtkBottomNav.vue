@@ -46,7 +46,7 @@
     </div>
 
     <span v-if="!isExplainerView && !isRuleViolation" class="caption grey--text">
-      © 2023 <a href="https://plusmeta.de" target="_blank">plusmeta GmbH</a>
+      © 2023 - {{ new Date().getFullYear() }} <a href="https://quanos.com/produkte/plusmeta-platform/vdi-2770-use-case" target="_blank">Quanos Solutions GmbH</a>
       &bull;
       <a target="_blank" href="https://help.plusmeta.de/usage-agreement/">{{ $t("Otk.dataprotection") }}</a>
       &bull;
